@@ -31,20 +31,31 @@ def blind_nd_dumb():
     return render_template('step_1_hand.html')
 
 @app.route('disable_nd_blind',method=['post'])
-def blind_only():
+def disable_nd_blind():
     return render_template('step_2_voice.html')
 
 @app.route('disable_nd_deaf',method=['post'])
-def blind_only():
+def disable_nd_deaf():
     return render_template('step_2_voice.html')
 
 @app.route('deaf_nd_dumb_nd_disable',method=['post'])
-def blind_only():
+def deaf_nd_dumb_nd_disable():
     return render_template('step_2_eye.html')
 
 @app.route('deaf_nd_dumb',method=['post'])
-def blind_only():
+def deaf_nd_dumb():
     return render_template('step_1_hand.html')
+
+
+@app.route('voice_front',method=['post'])
+def voice_front():
+    return render_template('step_1_hand.html')
+
+
+
+
+
+
 
 
 
