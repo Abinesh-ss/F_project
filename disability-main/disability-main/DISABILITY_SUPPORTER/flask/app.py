@@ -49,7 +49,7 @@ def deaf_nd_dumb():
 
 @app.route('voice_front',method=['post'])
 def voice_front():
-    return render_template('step_1_hand.html')
+    return render_template('voice_front.html')
 
 
 
