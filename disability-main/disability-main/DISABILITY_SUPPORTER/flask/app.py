@@ -14,9 +14,40 @@ import speech_recognition as sr
 
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+
+@app.route('/blind_only',methods=['POST'])
+def blind_only():
+    return render_template('step_2_voice.html')
+
+@app.route('/blind_nd_dumb',methods=['POST'])
+def blind_nd_dumb():
+    return render_template('step_1_hand.html')
+
+@app.route('disable_nd_blind',method=['post'])
+def blind_only():
+    return render_template('step_2_voice.html')
+
+@app.route('disable_nd_deaf',method=['post'])
+def blind_only():
+    return render_template('step_2_voice.html')
+
+@app.route('deaf_nd_dumb_nd_disable',method=['post'])
+def blind_only():
+    return render_template('step_2_eye.html')
+
+@app.route('deaf_nd_dumb',method=['post'])
+def blind_only():
+    return render_template('step_1_hand.html')
+
+
+
 
 
 def hand_gesture_reg():
@@ -44,11 +75,6 @@ def hand_gesture_reg():
                 print("Distance between index finger tip and thumb tip:", distance)
 
 
-@app.route('/blind_only',methods=['POST'])
-def blind_only():
-    return render_template('step_2_voice.html')
-
-"""
 def eye_gest_reg():
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
@@ -90,10 +116,7 @@ def eye_gest_reg():
                 print("Eyes closed")
             else:
                 print("Eyes open")
-"""
-@app.route('/blind_nd_dumb',methods=['POST'])
-def blind_nd_dumb():
-    return render_template('step_2_hand.html')
+
 
 @app.route('/finger_counter',methods=['POST'])
 def finger_counter():
@@ -148,9 +171,6 @@ def finger_count():
         return render_template('main_page_steps.html',order = order)
 
 
-#app.route('/blind_only')
-def blind_only():
-    return render_template('step_2_voice.html')
 def voice_reg():
     data = request.json
     voice_text = data['voice_text']
