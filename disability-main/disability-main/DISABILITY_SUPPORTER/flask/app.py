@@ -51,7 +51,9 @@ def deaf_nd_dumb():
 def voice_front():
     return render_template('voice_front.html')
 
-
+@app.route('/finger_counter',methods=['POST'])
+def finger_counter():
+    return render_template('hand_count_front.html')
 
 
 
@@ -129,9 +131,7 @@ def eye_gest_reg():
                 print("Eyes open")
 
 
-@app.route('/finger_counter',methods=['POST'])
-def finger_counter():
-    return render_template('hand_count_front.html')
+
 def finger_count():
     mp_hands = mp.solutions.hands
     hands = mp_hands.Hands()
