@@ -55,7 +55,9 @@ def voice_front():
 def finger_counter():
     return render_template('hand_count_front.html')
 
-
+app.route('/eye_gesture',methods=['POST'])
+def finger_counter():
+    return render_template('eye_gest_front.html')
 
 
 
