@@ -7,7 +7,7 @@ from threading import Thread
 import cv2
 import mediapipe as mp
 import numpy as np
-#import dlib
+import dlib
 from flask import Flask, request, jsonify
 import speech_recognition as sr
 
